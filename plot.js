@@ -24,7 +24,12 @@ d3.json("data/data.json").then((incomingData) => {
   var trace = {
     x: titles,
     y: ratings,
-    type: "bar"
+    type: "bar",
+    text: 
+      ["The Shawshank Redemption","The Godfather","The Dark Knight","The Godfather: Part II"],
+    marker: {
+      color: ["lightblue", "red","black","darkred"]
+    }
   };
 
   // Create the data array for our plot
@@ -38,5 +43,5 @@ d3.json("data/data.json").then((incomingData) => {
   };
 
   // Plot the chart to a div tag with id "bar-plot"
-  Plotly.newPlot("bar-plot", data, layout);
+  Plotly.newPlot("bar-plot", data, layout, {scrollZoom: true});
 });
